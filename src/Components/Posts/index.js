@@ -10,7 +10,7 @@ function Posts() {
   const [products, setProducts] = useState([]);
 
   const fetchData = async() => { 
-    const response = await fetch("https://fakestoreapi.com/products?limit=5")
+    const response = await fetch("https://fakestoreapi.com/products?limit=50")
     const data = await response.json()
 
     setProducts(data);
@@ -49,29 +49,9 @@ fetchData();
             </div>
           </div>
           
-          <div className="recommendations">
-            <div className="heading">
-              <span>Fresh recommendations</span>
-            </div>
-            <div className="cards">
-              <div className="card">
-                <div className="favorite">
-                  <Heart></Heart>
-                </div>
-                <div className="image">
-                  <img src={item.image} alt="" />
-                </div>
-                <div className="content">
-                  <p className="rate">{item.price}</p>
-                  <span className="name">{item.title}</span>
-                 
-                </div>
-                <div className="date">
-                  <span>10/5/2023</span>
-                </div>
-              </div>
-              </div>
-              </div>
+
+
+         
               </>
               )
             })

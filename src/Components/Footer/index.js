@@ -16,19 +16,20 @@ function Footer() {
               <li>Flats for rent</li>
               <li>Mobile Phones</li>
               <li>Jobs</li>
+              <li>Property</li>
             </ul>
           </div>
         </div>
         <div>
           <div className="heading">
-            <p>ABOUT US</p>
+            <p>About Us</p>
           </div>
           <div className="list">
             <ul>
-              <li>About Dubizzle Group</li>
+              <li>About Olx</li>
               <li>OLX Blog</li>
               <li>Contact Us</li>
-              <li>OLX for Businesses</li>
+              <li>OLX for Your Ease</li>
             </ul>
           </div>
         </div>

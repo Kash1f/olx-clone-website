@@ -23,6 +23,7 @@
   
   .recommendations .cards {
     display: flex;
+
   }
   
   .moreView .cards {
@@ -79,6 +80,8 @@
   
   .recommendations {
     margin: 16px 16px 24px;
+    display: flex;
+    justify-content: space-between;
   }
   
   .recommendations .heading span {
