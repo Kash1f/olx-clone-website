@@ -10,15 +10,17 @@ function Posts() {
   const [products, setProducts] = useState([]);
 
   const fetchData = async() => { 
-    const response = await fetch("https://fakestoreapi.com/products?limit=10")
+    const response = await fetch("https://fakestoreapi.com/products?limit=5")
     const data = await response.json()
 
-    setProducts(fetchData);
+    setProducts(data);
+    console.table(data);
   }
 
 fetchData();
 
   return (
+    
     <div className="postParentDiv">
       <div className="moreView">
         <div className="heading">
@@ -31,16 +33,16 @@ fetchData();
             products.map((item)=>{
               return (
                 <>
-                <div className="card">
+                <div className="card" key={item.id}>
             <div className="favorite">
               <Heart></Heart>
             </div>
             <div className="image">
-              <img src={pic1} alt="" />
+              <img src={item.image} alt="" />
             </div>
             <div className="content">
-              <p className="rate">Rs. 250000</p>
-              <span className="name">iPhone 14 Pro Max</span>
+              <p className="rate">{item.price}</p>
+              <span className="name">{item.title}</span>
             </div>
             <div className="date">
               <span>Tue May 04 2021</span>
@@ -57,16 +59,17 @@ fetchData();
                   <Heart></Heart>
                 </div>
                 <div className="image">
-                  <img src={pic1} alt="" />
+                  <img src={item.image} alt="" />
                 </div>
                 <div className="content">
-                  <p className="rate">Rs. 250000</p>
-                  <span className="name">iPhone 14 Pro Max</span>
+                  <p className="rate">{item.price}</p>
+                  <span className="name">{item.title}</span>
                  
                 </div>
                 <div className="date">
                   <span>10/5/2023</span>
                 </div>
+              </div>
               </div>
               </div>
               </>
@@ -81,6 +84,7 @@ fetchData();
         </div>
       </div>
     </div>
+    
   );
 }
 
