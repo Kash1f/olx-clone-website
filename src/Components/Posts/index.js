@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Heart from '../../assets/Heart';
 import pic1 from "../../assets/iphone.jpg"
@@ -9,6 +9,8 @@ function Posts() {
 
   const [products, setProducts] = useState([]);
 
+
+  //making a function to fetch data through API
   const fetchData = async() => { 
     const response = await fetch("https://fakestoreapi.com/products?limit=50")
     const data = await response.json()
@@ -17,7 +19,14 @@ function Posts() {
     console.table(data);
   }
 
-fetchData();
+    //using useEffect to fetch the data from API  by calling the above created function
+   useEffect(() => {
+    
+    fetchData();
+   
+  }, [])
+  
+
 
   return (
     
