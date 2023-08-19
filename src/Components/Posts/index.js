@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import Heart from '../../assets/Heart';
 import pic1 from "../../assets/iphone.jpg"
 import './style.css';
@@ -12,7 +11,7 @@ function Posts() {
 
   //making a function to fetch data through API
   const fetchData = async() => { 
-    const response = await fetch("https://fakestoreapi.com/products?limit=50")
+    const response = await fetch("https://fakestoreapi.com/products?limit=70")
     const data = await response.json()
 
     setProducts(data);
@@ -26,8 +25,6 @@ function Posts() {
    
   }, [])
   
-
-
   return (
     
     <div className="postParentDiv">
@@ -54,22 +51,14 @@ function Posts() {
               <span className="name">{item.title}</span>
             </div>
             <div className="date">
-              <span>Tue May 04 2021</span>
+              <span>Sat July 04 2023</span>
             </div>
           </div>
-          
-
-
-         
               </>
               )
             })
           };
-
-
-
-          
-        
+ 
         </div>
       </div>
     </div>
