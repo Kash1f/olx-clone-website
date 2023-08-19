@@ -94,8 +94,7 @@
   margin-right: 5px;
 }
 
-.language svg {
-}
+
 
 .span {
   text-decoration: none;
@@ -119,6 +118,7 @@
 .sellMenu {
   position: relative;
   cursor: pointer;
+  margin-right: 30px;
 }
 
 .sellMenu .all {
