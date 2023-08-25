@@ -41,16 +41,13 @@ function Header() {
           <span> ENGLISH </span>
           <Arrow></Arrow>
         </div>
-        <div onClick={()=>
+        <div onClick={() =>
 
           navigate('/signup')
 
         } className="login">
-          
-        <span>Login</span>
 
-        
-
+          <span>Login</span>
           <hr />
         </div>
 
