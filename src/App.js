@@ -12,7 +12,7 @@ import SignIn from './Pages/SignIn/SignIn';
 function App() {
   return (
     <div className="App">
-     
+
 
       <BrowserRouter>
 
@@ -28,7 +28,7 @@ function App() {
 
           <Route
 
-          path='/' element={<Home />}
+            path='/' element={<Home />}
           />
 
 
