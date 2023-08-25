@@ -1,12 +1,12 @@
-// Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need 
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 
-// import {getAuth, createUserWithEmailAndPassword} from './firebase.auth';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
+//TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#favailable-libraries
 // Your web app's Firebase configuration
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyAF-ygwjG9SWMN_Pjz3kljL3dSc3WVM3Wo",
   authDomain: "testproject-18f5e.firebaseapp.com",
@@ -16,11 +16,61 @@ const firebaseConfig = {
   appId: "1:141949547520:web:5ccb4a36e961863012d4e5"
 };
 
+
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = initializeApp( firebaseConfig);
+const auth = getAuth(app);
+// promise
+// Pending
+// 2.Resolved (success)
+// 3. Rejected (error)
 
-// Initialize Firebase Authentication and get a reference to the service
-const auth = getAuth(app)
+const signupUser = (email, password, age, username) => {
 
+console.log("email", email,"password", password, "age", age, "username", username)
 
+// const response = createUserwithEmailAndPassword(auth, email, password)
 
+createUserWithEmailAndPassword(auth,email,password)
+
+// when promise resolve
+
+.then(userCredential => {
+console.log( "user", userCredential)
+alert("Successfully signed up")
+})
+// when promise reject
+.catch( (error) => {
+console.log("firebase signup user error: ", error.message)
+alert(error.message)
+})
+// console. log( "createUserWithEmailAndPassword res:
+// , response)
+
+}
+
+const signInUser = (email, password,  username) => {
+
+  console.log("email", email,"password", password, "username", username)
+  
+  // const response = createUserwithEmailAndPassword(auth, email, password)
+  
+  createUserWithEmailAndPassword(auth,email,password)
+  
+  // when promise resolve
+  
+  .then(userCredential => {
+  console.log( "user", userCredential)
+  alert("Successfull Signed In")
+  })
+  // when promise reject
+  .catch( (error) => {
+  console.log("firebase signup user error: ", error.message)
+  alert(error.message)
+  })
+  // console. log( "createUserWithEmailAndPassword res:
+  // , response)
+  
+  }
+
+export {signupUser, signInUser}

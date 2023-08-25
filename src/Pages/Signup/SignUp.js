@@ -1,47 +1,47 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from 'react'
-import '../../assets2/styles/pages/Login.css'
-import { auth } from "../../config/firebase";
+import { useState } from "react" 
+import { signupUser } from "../../config/firebase";
+import "../../assets2/styles/pages/Signup.css"
+import { Navigate, useNavigate } from "react-router-dom";
 
 
-const SignUp = () => {
+function Signup(props) {
 
-  //creating useState to store values passed by the user
-  const [email, setEmail] = useState('');
-  const [password,setPassword] = useState('');
+  const navigate = useNavigate()
 
-  const signUp = (e) => {
-    e.preventDefault();
-    createUserWithEmailAndPassword (auth, email, password).then((userCredential) => 
-    {console.log(userCredential);
-    })
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [age, setAge] = useState("")
+  const [username, setUsername] = useState("")
 
-    .catch((error) => {
-      console.log(error);
-    });
-    }
-  return (
-    <div className='sign-in container'>SignIn
-    <form onSubmit={signUp}>
-    <h1>Create an Account</h1>
-    <input type="email" placeholder="Enter your Email" value={email}
-    //values will not be shown here bcz there is no onchange
-
-    onChange={(e) => setEmail(e.target.value)}
-></input>
-
-    <input type="password" placeholder="Enter your Password" value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      ></input>
+  const submit = () => {
    
-    <button type="submit">Sign Up</button>
+    const signupUserRes = signupUser(email, password, age, username)
+    console.log("signupUserRes ", signupUserRes) 
+    
+    navigate('/signin')
+   
+    }
+      return <div>
+        <h1>Signup Page</h1> <input onChange={(e) => {
+            setUsername(e.target.value)
+          }}
+          value={username} placeholder="Username"/>
+        <input onChange={(e) => {
+            setAge(e.target.value)
+          }}
+          placeholder="Age" value={age}/>
+          
+        <input onChange={(e) => {
+            setEmail(e.target.value)
+          }} placeholder="Email" value={email}/>
+          
+        <input 
+          onChange={(e) => {
+            setPassword(e.target.value)
+          }}
+          value={password} placeholder="Password"/>
+<button onClick={submit} >Submit</button> </div>
 
-
-    </form>
-
-    </div>
-
-  )
 }
 
-export default SignUp
+export default Signup

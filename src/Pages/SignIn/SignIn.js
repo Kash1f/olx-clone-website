@@ -1,47 +1,40 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
-import React, { useState } from 'react'
-import '../../assets2/styles/pages/Login.css'
-import { auth } from "../../config/firebase";
+import { useState } from "react" 
+import { signInUser } from "../../config/firebase"
+import "../../assets2/styles/pages/Login.css"
+import { useNavigate } from "react-router-dom"
 
+function SignIn(props) {
 
-const SignIn = () => {
+  const navigate = useNavigate()
 
-  //creating useState to store values passed by the user
-  const [email, setEmail] = useState('');
-  const [password,setPassword] = useState('');
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState("")
 
-  const signIn = (e) => {
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password).then((userCredential) => 
-    {console.log(userCredential);
-    })
-
-    .catch((error) => {
-      console.log(error);
-    });
+  const submit = () => {
+    
+    const signupUserRes = signInUser(email, password,username)
+    console.log("signupUserRes ", signupUserRes) 
+    
+   navigate('/')
     }
-  return (
-    <div className='sign-in container'>SignIn
-    <form onSubmit={signIn}>
-    <h1>Log In</h1>
-    <input type="email" placeholder="Enter your Email" value={email}
-    //values will not be shown here bcz there is no onchange
-
-    onChange={(e) => setEmail(e.target.value)}
-></input>
-
-    <input type="password" placeholder="Enter your Password" value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      ></input>
-   
-    <button type="submit">Log In</button>
-
-
-    </form>
-
-    </div>
-
-  )
+      return <div id="login">
+        <h1>Login Page</h1> <input onChange={(e) => {
+            setUsername(e.target.value)
+          }}
+          value={username} placeholder="Username"/>
+     
+          
+        <input onChange={(e) => {
+            setEmail(e.target.value)
+          }} placeholder="Email" value={email}/>
+          
+        <input 
+          onChange={(e) => {
+            setPassword(e.target.value)
+          }}
+          value={password} placeholder="Password"/>
+<button onClick={submit} >Submit</button> </div>
 }
 
 export default SignIn

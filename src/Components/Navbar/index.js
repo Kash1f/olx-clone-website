@@ -8,8 +8,13 @@ import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
 import SignIn from '../../Pages/SignIn/SignIn';
 import SignUp from "../../Pages/Signup/SignUp"
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+
+
+  const navigate = useNavigate()
+
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
@@ -36,9 +41,14 @@ function Header() {
           <span> ENGLISH </span>
           <Arrow></Arrow>
         </div>
-        <div className="loginPage">
-          {/* <span>Login</span> */}
-          <SignIn></SignIn>
+        <div onClick={()=>
+
+          navigate('/signup')
+
+        } className="loginPage">
+          
+        <span>Login</span>
+
           <hr />
         </div>
 
