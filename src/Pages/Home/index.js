@@ -4,15 +4,17 @@ import Banner from "../../Components/Banner"
 import Posts from "../../Components/Posts"
 import Footer from "../../Components/Footer"
 
-const index = () => {
+
+const Home = () => {
   return (
     <div>
       <Navbar/>
       <Banner/>
       <Posts/>
       <Footer/>
+     
     </div>
   )
 }
 
-export default index
+export default Home

@@ -6,6 +6,9 @@ import Search from '../../assets/Search';
 import Arrow from '../../assets/Arrow';
 import SellButton from '../../assets/SellButton';
 import SellButtonPlus from '../../assets/SellButtonPlus';
+import SignIn from '../../Pages/SignIn/SignIn';
+import SignUp from "../../Pages/Signup/SignUp"
+
 function Header() {
   return (
     <div className="headerParentDiv">
@@ -34,7 +37,8 @@ function Header() {
           <Arrow></Arrow>
         </div>
         <div className="loginPage">
-          <span>Login</span>
+          {/* <span>Login</span> */}
+          <SignIn></SignIn>
           <hr />
         </div>
 
