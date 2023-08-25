@@ -18,8 +18,8 @@ function SignIn(props) {
     
    navigate('/')
     }
-      return <div id="login">
-        <h1>Login Page</h1> <input onChange={(e) => {
+      return <div className="loginParentDiv">
+        <h1>Login Page</h1> <input className="input" onChange={(e) => {
             setUsername(e.target.value)
           }}
           value={username} placeholder="Username"/>
@@ -34,7 +34,7 @@ function SignIn(props) {
             setPassword(e.target.value)
           }}
           value={password} placeholder="Password"/>
-<button onClick={submit} >Submit</button> </div>
+<button className="button" onClick={submit} >Submit</button> </div>
 }
 
 export default SignIn

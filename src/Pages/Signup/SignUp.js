@@ -21,12 +21,12 @@ function Signup(props) {
     navigate('/signin')
    
     }
-      return <div>
+      return <div className="signupParentDiv">
         <h1>Signup Page</h1> <input onChange={(e) => {
             setUsername(e.target.value)
           }}
           value={username} placeholder="Username"/>
-        <input onChange={(e) => {
+        <input className="input" onChange={(e) => {
             setAge(e.target.value)
           }}
           placeholder="Age" value={age}/>

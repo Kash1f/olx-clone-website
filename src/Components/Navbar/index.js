@@ -45,9 +45,11 @@ function Header() {
 
           navigate('/signup')
 
-        } className="loginPage">
+        } className="login">
           
         <span>Login</span>
+
+        
 
           <hr />
         </div>
