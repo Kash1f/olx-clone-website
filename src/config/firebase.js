@@ -20,10 +20,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp( firebaseConfig);
 const auth = getAuth(app);
-// promise
-// Pending
-// 2.Resolved (success)
-// 3. Rejected (error)
 
 const signupUser = (email, password, age, username) => {
 
@@ -33,7 +29,6 @@ console.log("email", email,"password", password, "age", age, "username", usernam
 
 createUserWithEmailAndPassword(auth,email,password)
 
-// when promise resolve
 
 .then(userCredential => {
 console.log( "user", userCredential)
@@ -46,7 +41,6 @@ alert(error.message)
 })
 // console. log( "createUserWithEmailAndPassword res:
 // , response)
-
 }
 
 const signInUser = (email, password, username) => {

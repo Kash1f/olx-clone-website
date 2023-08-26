@@ -50,6 +50,14 @@ function Header() {
           <span>Login</span>
           <hr />
         </div>
+            
+            
+          <div onClick={() => navigate('/')} className="logout">
+
+          <span>Log out</span>
+          <hr />
+          </div>
+
 
         <div className="sellMenu">
           <SellButton></SellButton>

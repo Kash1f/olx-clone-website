@@ -107,6 +107,10 @@
   cursor: pointer;
 }
 
+.logout{
+  cursor: pointer;
+}
+
 .loginPage hr {
   margin: 0;
   background-color: black;
