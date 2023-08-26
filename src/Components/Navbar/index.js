@@ -51,9 +51,7 @@ function Header() {
           <hr />
         </div>
             
-            
-          <div onClick={() => navigate('/')} className="logout">
-
+          <div onClick={() => navigate('/signin')} className="logout">
           <span>Log out</span>
           <hr />
           </div>
