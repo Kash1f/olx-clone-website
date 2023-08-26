@@ -103,6 +103,10 @@
   margin-right: 5px;
 }
 
+.login{
+  cursor: pointer;
+}
+
 .loginPage hr {
   margin: 0;
   background-color: black;

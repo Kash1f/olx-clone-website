@@ -24,7 +24,6 @@ function SignIn(props) {
     }}
       value={username} placeholder="Username" />
 
-
     <input className="input" onChange={(e) => {
       setEmail(e.target.value)
     }} placeholder="Email" value={email} />
@@ -37,4 +36,4 @@ function SignIn(props) {
     <button className="button" onClick={submit} >Submit</button> </div>
 }
 
-export default SignIn
+export default SignIn;

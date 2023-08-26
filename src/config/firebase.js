@@ -40,7 +40,7 @@ console.log( "user", userCredential)
 alert("Successfully signed up")
 })
 // when promise reject
-.catch( (error) => {
+.catch((error) => {
 console.log("firebase signup user error: ", error.message)
 alert(error.message)
 })
@@ -49,7 +49,7 @@ alert(error.message)
 
 }
 
-const signInUser = (email, password,  username) => {
+const signInUser = (email, password, username) => {
 
   console.log("email", email,"password", password, "username", username)
   
@@ -57,14 +57,14 @@ const signInUser = (email, password,  username) => {
   
   createUserWithEmailAndPassword(auth,email,password)
   
-  // when promise resolve
   
   .then(userCredential => {
   console.log( "user", userCredential)
-  alert("Successfull Signed In")
+  // alert("Successfull Signed In")
+  alert("Welcome", email)
   })
-  // when promise reject
-  .catch( (error) => {
+  
+  .catch((error) => {
   console.log("firebase signup user error: ", error.message)
   alert(error.message)
   })

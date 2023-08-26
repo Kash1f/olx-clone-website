@@ -19,7 +19,6 @@ function Signup(props) {
     console.log("signupUserRes ", signupUserRes)
 
     navigate('/signin')
-
   }
   return <div className="signupParentDiv">
     <h1>Signup Page</h1> <input className="input" onChange={(e) => {

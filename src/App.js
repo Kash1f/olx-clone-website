@@ -5,10 +5,6 @@ import Signup from './Pages/Signup/SignUp';
 import SignIn from './Pages/SignIn/SignIn';
 
 
-
-
-
-
 function App() {
   return (
     <div className="App">
