@@ -8,8 +8,6 @@ import { useNavigate } from "react-router-dom";
 // Your web app's Firebase configuration
 
 
-
-
 const firebaseConfig = {
   apiKey: "AIzaSyAF-ygwjG9SWMN_Pjz3kljL3dSc3WVM3Wo",
   authDomain: "testproject-18f5e.firebaseapp.com",

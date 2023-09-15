@@ -2,6 +2,9 @@ import { useState } from "react"
 import { signupUser } from "../../config/firebase";
 import "../../assets2/styles/pages/Signup.css"
 import { Navigate, useNavigate } from "react-router-dom";
+import { initializeApp } from "firebase/app";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { useNavigate } from "react-router-dom";
 
 
 function Signup(props) {
