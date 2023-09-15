@@ -22,8 +22,6 @@ const firebaseConfig = {
 const app = initializeApp( firebaseConfig);
 const auth = getAuth(app);
 
-
-
 const signupUser = (email, password, age, username) => {
 
 console.log("email", email,"password", password, "age", age, "username", username)
