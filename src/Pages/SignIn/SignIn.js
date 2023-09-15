@@ -15,20 +15,18 @@ function SignIn(props) {
 
     const signupUserRes = signInUser(email, password, username)
     console.log("signupUserRes ", signupUserRes)
-
-    navigate('/')
   }
   return <div className="loginParentDiv">
-    <h1>Login Page</h1> <input className="input" onChange={(e) => {
+    <h1>Login Page</h1> <input required className="input" onChange={(e) => {
       setUsername(e.target.value)
     }}
       value={username} placeholder="Username" />
 
-    <input className="input" onChange={(e) => {
+    <input required className="input" onChange={(e) => {
       setEmail(e.target.value)
     }} placeholder="Email" value={email} />
 
-    <input className="input"
+    <input required className="input"
       onChange={(e) => {
         setPassword(e.target.value)
       }}

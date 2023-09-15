@@ -25,16 +25,16 @@ function Signup(props) {
       setUsername(e.target.value)
     }}
       value={username} placeholder="Username" />
-    <input className="input" onChange={(e) => {
+    <input required  className="input" onChange={(e) => {
       setAge(e.target.value)
     }}
       placeholder="Age" value={age} />
 
-    <input className="input" onChange={(e) => {
+    <input required className="input" onChange={(e) => {
       setEmail(e.target.value)
     }} placeholder="Email" value={email} />
 
-    <input className="input"
+    <input required className="input"
       onChange={(e) => {
         setPassword(e.target.value)
       }}

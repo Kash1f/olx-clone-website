@@ -1,10 +1,13 @@
 // Import the functions you need from the SDKs you need 
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { useNavigate } from "react-router-dom";
 
 //TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#favailable-libraries
 // Your web app's Firebase configuration
+
+
 
 
 const firebaseConfig = {
@@ -21,6 +24,8 @@ const firebaseConfig = {
 const app = initializeApp( firebaseConfig);
 const auth = getAuth(app);
 
+
+
 const signupUser = (email, password, age, username) => {
 
 console.log("email", email,"password", password, "age", age, "username", username)
@@ -33,11 +38,14 @@ createUserWithEmailAndPassword(auth,email,password)
 .then(userCredential => {
 console.log( "user", userCredential)
 alert("Successfully signed up")
+
+  navigate('/');
 })
 // when promise reject
 .catch((error) => {
 console.log("firebase signup user error: ", error.message)
 alert(error.message)
+
 })
 // console. log( "createUserWithEmailAndPassword res:
 // , response)
