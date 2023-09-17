@@ -14,12 +14,12 @@
 }
 
 .placeSearch {
-  width: 16em;
+  width: 15em;
   height: 50px;
   display: flex;
   align-items: center;
   padding: 0 10px;
-  border: 3px solid #002f34;
+  border: 5px solid #002f34;
   border-radius: 5px;
   background-color: white;
 }
@@ -36,7 +36,7 @@
 
 .productSearch {
   width: 35em;
-  height: 48px;
+  height: 50px;
   border: 2px solid #002f34;
   border-radius: 4px;
   display: flex;
